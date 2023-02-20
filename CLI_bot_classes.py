@@ -5,14 +5,19 @@ class AdressBook(UserDict):
     
     def add_record(self, record):
         self.data[record.name.value] = record
+        
 
  
 class Record:
     
-    def __init__(self, name) -> None:
-        self.name = Name(name)
+    def __init__(self, name, phone) -> None:
+        self.name = name
+        self.phone = phone
         self.phones = []
-
+        if phone:
+            self.phones.append(phone)
+    
+    
     def add_phone(self, phone):
         self.phones.append(Phone(phone))
 
